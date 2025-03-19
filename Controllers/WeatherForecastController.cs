@@ -7,6 +7,7 @@ namespace GitHubActions_WebAPI.Controllers;
 public class WeatherForecastController : ControllerBase
 {
     //add comment
+    error
     private static readonly string[] Summaries = new[]
     {
         "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
