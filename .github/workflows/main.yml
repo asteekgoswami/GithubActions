@@ -1,0 +1,30 @@
+name: Build and Test Dotnet WebAPI
+
+on:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Dotnet WebAPI
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 8.0.x
+
+      - name: Restore WebAPI dependencies
+        run: dotnet restore
+
+      - name: Build WebAPI
+        run: dotnet build --configuration Release --no-restore
+
+      - name : Run Test
+        run: dotnet test --no-restore --verbosity normal
+      
